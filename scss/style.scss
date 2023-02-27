@@ -1,0 +1,74 @@
+.data-relatorio {
+    display: none;
+
+    h1 {
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+.final {
+    text-align: right;
+    font-weight: 900;
+}
+
+.total {
+    font-weight: 500;
+    color: #00008B;
+    font-size: 18px;
+}
+
+tBody tr:nth-child(even) {
+    &:hover {
+        background-color: #fff;
+    }
+}
+
+.input-date,
+.input-desc,
+.input-valor {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.input-desc {
+    text-transform: uppercase;
+}
+
+.input-valor {
+    /* Firefox */
+    appearance: textfield;
+
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+@media print {
+    @page {
+        margin-top: 15px /* this affects the margin in the printer settings */
+    }
+    .container {
+        max-width: 100% !important;
+
+        .data-relatorio {
+            display: inline;
+            color: #ff0000;
+        }
+
+        tBody tr:not(.changed, .val-final) {
+            display: none;
+        }
+
+        .input-date,
+        .input-desc {
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+}
