@@ -7,15 +7,21 @@
     }
 }
 
-.final {
-    text-align: right;
-    font-weight: 900;
-}
+.val-final {
+    .btn {
+        width: calc((100% / 2) - 0.5rem);
+    }
 
-.total {
-    font-weight: 500;
-    color: #00008B;
-    font-size: 18px;
+    .final {
+        font-weight: 900;
+        text-align: right;
+    }
+
+    .total {
+        font-weight: 500;
+        color: #00008B;
+        font-size: 18px;
+    }
 }
 
 tBody tr:nth-child(even) {
@@ -33,7 +39,12 @@ tBody tr:nth-child(even) {
 }
 
 .input-desc {
+    width: 100%;
     text-transform: uppercase;
+
+    &::placeholder {
+        text-transform: initial;
+    }
 }
 
 .input-valor {
@@ -50,8 +61,12 @@ tBody tr:nth-child(even) {
 
 @media print {
     @page {
-        margin-top: 15px /* this affects the margin in the printer settings */
+        margin-top: 15px;
+        /* this affects the margin in the printer settings */
+        margin-bottom: 0;
+        /* this affects the margin in the printer settings */
     }
+
     .container {
         max-width: 100% !important;
 
@@ -69,6 +84,10 @@ tBody tr:nth-child(even) {
             &::placeholder {
                 color: transparent;
             }
+        }
+
+        .btn {
+            display: none;
         }
     }
 }

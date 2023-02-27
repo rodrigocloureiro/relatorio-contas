@@ -30,3 +30,9 @@ function valFinal() {
     }
     return soma;
 }
+
+const btnLimpar = document.querySelector('#limpar');
+btnLimpar.addEventListener('click', () => location.reload());
+
+const btnImprimir = document.querySelector('#imprimir');
+btnImprimir.addEventListener('click', () => window.print());

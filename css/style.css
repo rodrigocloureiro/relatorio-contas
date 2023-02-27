@@ -6,12 +6,14 @@
   font-weight: 600;
 }
 
-.final {
-  text-align: right;
-  font-weight: 900;
+.val-final .btn {
+  width: calc(50% - 0.5rem);
 }
-
-.total {
+.val-final .final {
+  font-weight: 900;
+  text-align: right;
+}
+.val-final .total {
   font-weight: 500;
   color: #00008B;
   font-size: 18px;
@@ -30,7 +32,14 @@ tBody tr:nth-child(even):hover {
 }
 
 .input-desc {
+  width: 100%;
   text-transform: uppercase;
+}
+.input-desc::-moz-placeholder {
+  text-transform: initial;
+}
+.input-desc::placeholder {
+  text-transform: initial;
 }
 
 .input-valor {
@@ -48,6 +57,9 @@ tBody tr:nth-child(even):hover {
 @media print {
   @page {
     margin-top: 15px;
+    /* this affects the margin in the printer settings */
+    margin-bottom: 0;
+    /* this affects the margin in the printer settings */
   }
   .container {
     max-width: 100% !important;
@@ -65,5 +77,8 @@ tBody tr:nth-child(even):hover {
   .container .input-date::placeholder,
   .container .input-desc::placeholder {
     color: transparent;
+  }
+  .container .btn {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
