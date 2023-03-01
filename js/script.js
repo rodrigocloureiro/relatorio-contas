@@ -1,6 +1,6 @@
 const dataRelatorio = document.querySelector('.data-relatorio h1');
 let date = new Date();
-dataRelatorio.textContent = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+dataRelatorio.textContent = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
 
 let soma = 0;
 let count = 0;
@@ -19,7 +19,7 @@ arrVal.forEach(item => {
             item.parentNode.parentNode.classList.add('changed');
             e.target.parentNode.parentNode.children[0].textContent = count;
         }
-        total.textContent = valFinal();
+        total.textContent = valFinal().toFixed(2);
     });
 });
 
